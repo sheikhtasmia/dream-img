@@ -13,7 +13,7 @@ export default function AlbumCard({ album, priority = false }: { album: Album; p
         sizes="(min-width: 768px) 33vw, 100vw"
         className="object-cover"
       />
-      <div className="caption">
+      <div className="caption always-visible">
         <span className="font-serif text-lg text-ivory block">{album.title}</span>
         <span className="font-sans font-light text-xs text-ivory-dim">
           {album.event} &middot; {album.location}
@@ -21,4 +21,4 @@ export default function AlbumCard({ album, priority = false }: { album: Album; p
       </div>
     </Link>
   );
-}
+} 

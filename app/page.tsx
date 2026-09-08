@@ -15,7 +15,6 @@ const heroSlides = [
   { src: "/hero5.jpg", alt: "Couples posing, natural light" },
   { src: "/rsfahim5.jpg", alt: "Couples posing, natural light" },
   { src: "/rajan7.jpg", alt: "Couples posing, natural light" },
-
 ];
 
 const featured = albums.slice(0, 6);
@@ -38,59 +37,19 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-ink/70" />
       </div>
 
-      {/* HERO */}
-      <section className="relative h-[78svh] min-h-[480px] max-h-[820px] sm:h-[85svh] lg:h-screen lg:max-h-none w-full overflow-hidden flex items-end">
+      {/* HERO — full-bleed slideshow, no copy over it. The story opens on the
+          photograph itself; the studio name and booking link already live
+          in the nav above it. */}
+      <section className="relative h-[78svh] min-h-[480px] max-h-[820px] sm:h-[85svh] lg:h-screen lg:max-h-none w-full overflow-hidden">
         <HeroSlideshow slides={heroSlides} />
-
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-14 sm:pb-20 lg:pb-28 pointer-events-none">
-          <div className="pointer-events-auto w-fit">
-            <p className="hero-reveal reveal-up text-gold font-light text-sm mb-5 tracking-wide" style={{ animationDelay: "1.05s" }}>
-              Exclusive wedding photography &amp; cinematography — Savar, Dhaka
-            </p>
-            <h1
-              className="hero-reveal reveal-up font-serif text-[2.4rem] leading-[1.1] sm:text-5xl md:text-6xl font-medium text-ivory max-w-2xl"
-              style={{ animationDelay: "1.25s" }}
-            >
-              Every glance, every gold thread held.
-            </h1>
-            <div className="hero-reveal reveal-up mt-8" style={{ animationDelay: "1.45s" }}>
-              <Link href="/frames-films" className="bg-gold text-ink font-normal text-sm px-7 py-3.5 hover:bg-gold-bright btn-gold inline-block">
-                See our work
-              </Link>
-            </div>
-          </div>
-        </div>
 
         <Link
           href="/frames-films"
-          className="scroll-cue absolute bottom-8 right-8 md:right-10 z-10 flex flex-col items-center gap-2 text-ivory-dim/70 hover:text-gold transition-colors"
+          className="scroll-cue absolute bottom-8 right-8 md:right-10 z-10 flex flex-col items-center text-ivory-dim/50 hover:text-gold transition-colors"
           aria-label="Scroll to our work"
         >
-          <span className="text-[0.65rem] font-light tracking-wide [writing-mode:vertical-rl]">Scroll</span>
           <span className="w-px h-10 bg-current" />
         </Link>
-      </section>
-
-      {/* FACTS STRIP */}
-      <section className="px-6 md:px-10 border-t border-ivory/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-3 py-10 md:py-12">
-          <Reveal className="pr-4">
-            <p className="font-serif text-3xl md:text-4xl text-ivory">
-              <StatCounter target={104} suffix="K+" />
-            </p>
-            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Families following our work</p>
-          </Reveal>
-          <Reveal className="px-4 border-l border-ivory/10" delay={0.1}>
-            <p className="font-serif text-3xl md:text-4xl text-ivory">
-              <StatCounter target={12} suffix="+" /> yrs
-            </p>
-            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Behind the lens, across Bangladesh</p>
-          </Reveal>
-          <Reveal className="pl-4 border-l border-ivory/10" delay={0.2}>
-            <p className="font-serif text-3xl md:text-4xl text-ivory">Savar</p>
-            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Studio based in Dhaka division</p>
-          </Reveal>
-        </div>
       </section>
 
       {/* FEATURED ALBUMS */}
@@ -110,6 +69,30 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FACTS STRIP — right after the albums, so the numbers back up the
+          work the visitor just saw, instead of sitting alone at the very
+          end of the page. */}
+      <section className="px-6 md:px-10 py-14 md:py-16 border-t border-ivory/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-3">
+          <Reveal className="pr-4">
+            <p className="font-serif text-3xl md:text-4xl text-ivory">
+              <StatCounter target={104} suffix="K+" />
+            </p>
+            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Families following our work</p>
+          </Reveal>
+          <Reveal className="px-4 border-l border-ivory/10" delay={0.1}>
+            <p className="font-serif text-3xl md:text-4xl text-ivory">
+              <StatCounter target={12} suffix="+" /> yrs
+            </p>
+            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Behind the lens, across Bangladesh</p>
+          </Reveal>
+          <Reveal className="pl-4 border-l border-ivory/10" delay={0.2}>
+            <p className="font-serif text-3xl md:text-4xl text-ivory">Savar</p>
+            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Studio based in Dhaka division</p>
+          </Reveal>
         </div>
       </section>
 
@@ -159,8 +142,8 @@ export default function HomePage() {
               <div>
                 <h3 className="font-serif text-2xl text-ivory mb-3">Cinematography</h3>
                 <p className="text-ivory-dim font-light leading-relaxed text-sm md:text-base">
-                  A short wedding film built around the moments that actually happened vows, tears,
-                  the walk to the stage scored and paced like something you&rsquo;d watch again next year.
+                  A short wedding film built around the moments that actually happened, vows, tears,
+                  the walk to the stage, scored and paced like something you&rsquo;d watch again next year.
                 </p>
               </div>
             </Reveal>
@@ -214,4 +197,4 @@ export default function HomePage() {
       <VideoShowcase />
     </>
   );
-} 
+}

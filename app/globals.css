@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #17110c;
-  --color-ink-2: #1f1811;
+  --color-ink: #0d0b09;
+  --color-ink-2: #15120e;
   --color-ivory: #f3e9da;
   --color-ivory-dim: #cbbfac;
   --color-gold: #b8935a;
@@ -186,6 +186,12 @@ body.loaded .hero-reveal {
   transform: translateY(0);
   opacity: 1;
 }
+/* Some cards (album covers) should show their caption without needing
+   hover/touch — mainly for touch devices where hover never fires. */
+.frame .caption.always-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 /* ---------- nav ---------- */
 #site-nav {
@@ -231,20 +237,25 @@ body.loaded .hero-reveal {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.6s ease;
+  transform: scale(1.06);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .slide.active {
   opacity: 1;
+  transform: scale(1);
+  z-index: 1;
 }
 .slide img {
-  animation: kenburns 9s ease-in-out forwards;
+  animation: kenburns 7s ease-in-out forwards;
 }
 @keyframes kenburns {
   from {
     transform: scale(1);
   }
   to {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 }
 
