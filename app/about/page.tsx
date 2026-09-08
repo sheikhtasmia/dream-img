@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 // Placeholder — swap for the real founder's name, role, and photo.
 const founder = {
-  name: "Founder Name",
-  role: "Founder & Lead Photographer",
+  name: "Kayem Islam",
+  role: "CEO & Chief photographer",
   photo: "/founder.jpg",
   bio: "Started Dream Images over a decade ago shooting a friend's wedding on borrowed equipment. Still personally shoots most weddings the studio takes on.",
 };
