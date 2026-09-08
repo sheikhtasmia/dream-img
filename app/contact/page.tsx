@@ -24,7 +24,7 @@ export default async function ContactPage({
           <p className="text-gold font-light text-sm mb-4 tracking-wide">Contact</p>
           <h1 className="font-serif text-4xl md:text-5xl text-ivory mb-6">Let&rsquo;s talk about your date</h1>
           <p className="text-ivory-dim font-light leading-relaxed max-w-sm mb-10">
-            Send us your wedding date and venue on WhatsApp or call directly — we reply personally,
+            Send us your wedding date and venue on WhatsApp or call directly we reply personally,
             not through a bot.
           </p>
 

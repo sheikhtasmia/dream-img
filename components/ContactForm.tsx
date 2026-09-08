@@ -51,7 +51,7 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
           <>
             <p className="font-serif text-xl text-ivory mb-2">Request sent</p>
             <p className="text-ivory-dim font-light text-sm mb-6">
-              We&rsquo;ll reply by email soon. If it&rsquo;s urgent, message us directly on WhatsApp —
+              We&rsquo;ll reply by email soon. If it&rsquo;s urgent, message us directly on WhatsApp
               we usually reply faster there.
             </p>
           </>
@@ -59,7 +59,7 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
           <>
             <p className="font-serif text-xl text-ivory mb-2">Couldn&rsquo;t send that</p>
             <p className="text-ivory-dim font-light text-sm mb-6">
-              Something went wrong on our end — please message us directly on WhatsApp instead and
+              Something went wrong on our end please message us directly on WhatsApp instead and
               we&rsquo;ll take it from there.
             </p>
           </>
@@ -123,7 +123,7 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
             name="phone"
             required
             className="w-full bg-transparent border-b border-ivory/10 focus:border-gold outline-none py-2 text-ivory placeholder:text-ivory-dim/40"
-            placeholder="01XXXXXXXXX"
+            placeholder="+8801XXXXXXXXX"
           />
         </div>
       </div>
