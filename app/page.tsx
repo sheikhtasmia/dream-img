@@ -13,6 +13,9 @@ const heroSlides = [
   { src: "/hero3.jpg", alt: "Nikah ceremony moment" },
   { src: "/hero4.jpg", alt: "Reception stage, night lights" },
   { src: "/hero5.jpg", alt: "Couples posing, natural light" },
+  { src: "/rsfahim5.jpg", alt: "Couples posing, natural light" },
+  { src: "/rajan7.jpg", alt: "Couples posing, natural light" },
+
 ];
 
 const featured = albums.slice(0, 6);
