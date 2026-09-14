@@ -1,0 +1,214 @@
+import Link from "next/link";
+import Image from "next/image";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import Reveal from "@/components/Reveal";
+import StatCounter from "@/components/StatCounter";
+import AlbumCard from "@/components/AlbumCard";
+import VideoShowcase from "@/components/VideoShowcase";
+import { albums } from "@/lib/albums";
+
+const heroSlides = [
+  { src: "/hero11.jpg", alt: "Bengali wedding couple, candid portrait" },
+  { src: "/hero22.jpeg", alt: "Bride getting ready, golden light" },
+  { src: "/hero33.jpg", alt: "Nikah ceremony moment" },
+  { src: "/hero44.jpg", alt: "Reception stage, night lights" },
+  { src: "/hero55.jpg", alt: "Couples posing, natural light" },
+  { src: "/hero66.jpeg", alt: "Bride portrait" },
+  
+];
+
+const featured = albums.slice(0, 6);
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Full-page blurred backdrop photo — shows through in the gaps between
+          sections instead of a flat black background. Hero/Trust sections
+          have their own sharp full-bleed photos layered on top of this. */}
+      <div className="fixed inset-0">
+        <Image
+          src="/rsfahim2.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover blur-2xl scale-110 opacity-40"
+        />
+        <div className="absolute inset-0 bg-ink/70" />
+      </div>
+
+      {/* HERO — full-bleed slideshow, no copy over it. The story opens on the
+          photograph itself; the studio name and booking link already live
+          in the nav above it. */}
+      <section className="relative h-[78svh] min-h-[480px] max-h-[820px] sm:h-[85svh] lg:h-screen lg:max-h-none w-full overflow-hidden">
+        <HeroSlideshow slides={heroSlides} />
+
+        <Link
+          href="/frames-films"
+          className="scroll-cue absolute bottom-8 right-8 md:right-10 z-10 flex flex-col items-center text-ivory-dim/50 hover:text-gold transition-colors"
+          aria-label="Scroll to our work"
+        >
+          <span className="w-px h-10 bg-current" />
+        </Link>
+      </section>
+
+      {/* FEATURED ALBUMS */}
+      <section className="px-6 md:px-10 py-10 md:py-28 border-t border-ivory/10">
+        <div className="max-w-7xl mx-auto">
+          <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <h2 className="font-serif text-3xl md:text-4xl text-ivory max-w-md">Recent weddings we&rsquo;ve told</h2>
+            <Link href="/frames-films" className="text-gold text-sm font-light border-b border-gold/40 pb-0.5 hover:border-gold w-fit">
+              View all Frames &amp; Films
+            </Link>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-4 mb-4">
+            <Reveal>
+              <AlbumCard album={featured[0]} size="large" priority />
+            </Reveal>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+            {featured.slice(1, 6).map((album, i) => (
+              <Reveal key={album.slug} delay={(i + 1) * 0.08}>
+                <AlbumCard album={album} size="small" />
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="text-center pt-2">
+            <Link
+              href="/frames-films"
+              className="inline-block border border-gold text-gold text-sm font-normal px-7 py-3 hover:bg-gold hover:text-ink btn-gold"
+            >
+              See more weddings
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FACTS STRIP — right after the albums, so the numbers back up the
+          work the visitor just saw, instead of sitting alone at the very
+          end of the page. */}
+      <section className="px-6 md:px-10 py-14 md:py-16 border-t border-ivory/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-3">
+          <Reveal className="pr-4">
+            <p className="font-serif text-3xl md:text-4xl text-ivory">
+              <StatCounter target={104} suffix="K+" />
+            </p>
+            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Families following our work</p>
+          </Reveal>
+          <Reveal className="px-4 border-l border-ivory/10" delay={0.1}>
+            <p className="font-serif text-3xl md:text-4xl text-ivory">
+              <StatCounter target={12} suffix="+" /> yrs
+            </p>
+            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Behind the lens, across Bangladesh</p>
+          </Reveal>
+          <Reveal className="pl-4 border-l border-ivory/10" delay={0.2}>
+            <p className="font-serif text-3xl md:text-4xl text-ivory">Savar</p>
+            <p className="text-ivory-dim font-light text-xs md:text-sm mt-1">Studio based in Dhaka division</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SERVICES TEASER */}
+      <section className="px-6 md:px-10 py-20 md:py-28 border-t border-ivory/10">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
+            <h2 className="font-serif text-3xl md:text-4xl text-ivory mb-16">Two crafts, one wedding day</h2>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-14 md:gap-10">
+            <Reveal className="grid grid-cols-1 gap-6">
+              <div className="frame h-64 md:h-80 relative">
+                <Image
+                  src="/rsfahim2.jpg"
+                  alt="Wedding photography sample"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="caption">
+                  <span className="font-sans font-light text-xs text-caption">Photography</span>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl text-ivory mb-3">Photography</h3>
+                <p className="text-ivory-dim font-light leading-relaxed text-sm md:text-base">
+                  Candid coverage across every ceremony, alongside directed portraits with the couple
+                  and both families. Delivered as a curated, edited gallery.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal className="grid grid-cols-1 gap-6" delay={0.15}>
+              <div className="frame h-64 md:h-80 relative">
+                <Image
+                  src="/nafisa1.jpg"
+                  alt="Wedding cinematography sample"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="caption">
+                  <span className="font-sans font-light text-xs text-caption">Cinematography</span>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl text-ivory mb-3">Cinematography</h3>
+                <p className="text-ivory-dim font-light leading-relaxed text-sm md:text-base">
+                  A short wedding film built around the moments that actually happened, vows, tears,
+                  the walk to the stage, scored and paced like something you&rsquo;d watch again next year.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal className="mt-14" delay={0.1}>
+            <Link href="/packages" className="text-gold text-sm font-light border-b border-gold/40 pb-0.5 hover:border-gold">
+              See packages &amp; pricing
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* TRUST — cinematic quote break with a real photo behind it */}
+      <section className="relative py-28 md:py-36 px-6 md:px-10 overflow-hidden border-t border-ivory/10">
+        <Image
+          src="/rsfahim5.jpg"
+          alt="Dream Images, wedding coverage"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-ink/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/70" />
+
+        <Reveal className="relative z-10 max-w-3xl mx-auto text-center" as="div">
+          <p className="font-serif text-2xl md:text-3xl text-ivory leading-snug">
+            Photographs our couples still open, years later that&rsquo;s the only metric we&rsquo;ve ever cared about.
+          </p>
+          <p className="text-ivory-dim font-light text-sm mt-6">
+            Followed by over 104,000 people across Bangladesh, trusted with some of the most closely
+            watched weddings of the year.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 md:px-10 py-20 md:py-28 border-t border-ivory/10">
+        <Reveal className="max-w-3xl mx-auto text-center">
+          <h2 className="font-serif text-3xl md:text-4xl text-ivory mb-6">Let&rsquo;s talk about your date</h2>
+          <p className="text-ivory-dim font-light mb-8 max-w-md mx-auto">
+            Send us your wedding date and venue we reply personally, not through a bot.
+          </p>
+          <Link href="/contact" className="bg-gold text-ink font-normal text-sm px-7 py-3.5 hover:bg-gold-bright btn-gold inline-block">
+            Book a consultation
+          </Link>
+        </Reveal>
+      </section>
+
+      {/* WEDDING FILMS — shows automatically once featuredVideos has real IDs */}
+      <VideoShowcase />
+    </>
+  );
+}
