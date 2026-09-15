@@ -6,7 +6,7 @@ export type FeaturedVideo = {
   url: string;
   title: string;
   /**
-   * A still image representing the video — ideally an exported thumbnail
+   * A still image representing the video ideally an exported thumbnail
    * frame from the actual reel. A real wedding photo works as a placeholder
    * until you export one.
    */
@@ -23,7 +23,7 @@ export const featuredVideos: FeaturedVideo[] = [
   {
     url: "https://www.facebook.com/reel/1483358815844725/",
     title: "RS Fahim & Manjia — Reel",
-    thumbnail: "/rsfahim.jpg",
+    thumbnail: "/rsfahim.webp",
     aspect: "reel",
   },
 ];
