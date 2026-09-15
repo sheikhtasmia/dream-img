@@ -8,12 +8,12 @@ import VideoShowcase from "@/components/VideoShowcase";
 import { albums } from "@/lib/albums";
 
 const heroSlides = [
-  { src: "/hero11.jpg", alt: "Bengali wedding couple, candid portrait" },
-  { src: "/hero22.jpeg", alt: "Bride getting ready, golden light" },
-  { src: "/hero33.jpg", alt: "Nikah ceremony moment" },
-  { src: "/hero44.jpg", alt: "Reception stage, night lights" },
-  { src: "/hero55.jpg", alt: "Couples posing, natural light" },
-  { src: "/hero66.jpeg", alt: "Bride portrait" },
+  { src: "/hero11.webp", alt: "Bengali wedding couple, candid portrait" },
+  { src: "/hero22.webp", alt: "Bride getting ready, golden light" },
+  { src: "/hero33.webp", alt: "Nikah ceremony moment" },
+  { src: "/hero44.webp", alt: "Reception stage, night lights" },
+  { src: "/hero55.webp", alt: "Couples posing, natural light" },
+  { src: "/hero66.webp", alt: "Bride portrait" },
   
 ];
 
@@ -27,7 +27,7 @@ export default function HomePage() {
           have their own sharp full-bleed photos layered on top of this. */}
       <div className="fixed inset-0">
         <Image
-          src="/rsfahim2.jpg"
+          src="/rsfahim2.webp"
           alt=""
           fill
           sizes="100vw"
@@ -121,7 +121,7 @@ export default function HomePage() {
             <Reveal className="grid grid-cols-1 gap-6">
               <div className="frame h-64 md:h-80 relative">
                 <Image
-                  src="/rsfahim2.jpg"
+                  src="/rsfahim2.webp"
                   alt="Wedding photography sample"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
@@ -143,7 +143,7 @@ export default function HomePage() {
             <Reveal className="grid grid-cols-1 gap-6" delay={0.15}>
               <div className="frame h-64 md:h-80 relative">
                 <Image
-                  src="/nafisa1.jpg"
+                  src="/nafisa1.webp"
                   alt="Wedding cinematography sample"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
@@ -174,7 +174,7 @@ export default function HomePage() {
       {/* TRUST — cinematic quote break with a real photo behind it */}
       <section className="relative py-28 md:py-36 px-6 md:px-10 overflow-hidden border-t border-ivory/10">
         <Image
-          src="/rsfahim5.jpg"
+          src="/rsfahim5.webp"
           alt="Dream Images, wedding coverage"
           fill
           sizes="100vw"

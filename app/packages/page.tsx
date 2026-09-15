@@ -9,7 +9,7 @@ import { services, serviceHref } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Packages & Services",
   description:
-    "Wedding photography and cinematography packages from Dream Images — Basic, Standard, and Premium Combo coverage for every ceremony.",
+    "Wedding photography and cinematography packages from Dream Images Basic, Standard, and Premium Combo coverage for every ceremony.",
   alternates: { canonical: "/packages" },
 };
 
@@ -46,7 +46,7 @@ const packages: Package[] = [
     name: "Premium Combo 1",
     price: "৳34,999",
     featured: true,
-    tagline: "Our most-booked package — two photographers, two cinematographers.",
+    tagline: "Our most-booked package two photographers, two cinematographers.",
     inclusions: [
       "2 top photographers",
       "2 top cinematographers",
@@ -60,7 +60,7 @@ const packages: Package[] = [
   {
     name: "Premium Combo 2",
     price: "৳49,999",
-    tagline: "Every ceremony, fully documented — with a drone shoot included.",
+    tagline: "Every ceremony, fully documented with a drone shoot included.",
     inclusions: [
       "3 top photographers",
       "2 top cinematographers",
@@ -138,7 +138,7 @@ export default function PackagesPage() {
           <h2 className="font-serif text-2xl text-ivory mb-4">Not sure what you need?</h2>
           <p className="text-ivory-dim font-light leading-relaxed mb-6">
             Message us on WhatsApp with your wedding date, venue, and the ceremonies you&rsquo;re
-            planning — we&rsquo;ll recommend coverage and send a clear quote within a day.
+            planning we&rsquo;ll recommend coverage and send a clear quote within a day.
           </p>
           <a
             href={siteConfig.whatsapp}
