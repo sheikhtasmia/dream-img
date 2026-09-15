@@ -2,12 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // picsum.photos serves the placeholder photography used throughout
-    // this demo — remove once real photos (local files or a CDN) are in place.
     remotePatterns: [
       {
         protocol: "https",
+        // picsum.photos serves any leftover placeholder photography —
+        // remove once every image is a real, final photo.
         hostname: "picsum.photos",
+      },
+      {
+        protocol: "https",
+        // imgbb's direct image-hosting domain — used so real wedding
+        // photos can live off-repo instead of bloating the git history.
+        hostname: "i.ibb.co",
       },
     ],
   },
