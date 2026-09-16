@@ -6,7 +6,7 @@ export type FeaturedVideo = {
   url: string;
   title: string;
   /**
-<<<<<<< HEAD
+
    * A still image representing the video — ideally an exported thumbnail
 =======
    * A still image representing the video ideally an exported thumbnail
@@ -27,11 +27,9 @@ export const featuredVideos: FeaturedVideo[] = [
   {
     url: "https://www.facebook.com/reel/1483358815844725/",
     title: "RS Fahim & Manjia — Reel",
-<<<<<<< HEAD
-    thumbnail: "/rsfahim.jpg",
-=======
+
     thumbnail: "/rsfahim.webp",
->>>>>>> f4d8eab25006e4e2b248506d546d84685c571b7b
+
     aspect: "reel",
   },
 ];
@@ -87,8 +85,5 @@ export default function VideoShowcase() {
       </div>
     </section>
   );
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> f4d8eab25006e4e2b248506d546d84685c571b7b
