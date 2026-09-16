@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ package?: string }>;
+  searchParams: Promise<{ package?: string; details?: string }>;
 }) {
-  const { package: initialPackage } = await searchParams;
+  const { package: initialPackage, details: initialDetails } = await searchParams;
 
   return (
     <div className="pt-32 md:pt-40 pb-20 md:pb-28 px-6 md:px-10">
@@ -67,8 +67,10 @@ export default async function ContactPage({
           </div>
         </Reveal>
 
+        {/* No tilt here on purpose — this card needs to stay perfectly
+            steady so the form is easy to actually fill in. */}
         <Reveal delay={0.1} className="border border-ivory/10 p-8 md:p-10 bg-ink-2">
-          <ContactForm initialPackage={initialPackage} />
+          <ContactForm initialPackage={initialPackage} initialDetails={initialDetails} />
         </Reveal>
       </div>
     </div>

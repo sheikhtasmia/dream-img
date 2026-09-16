@@ -4,17 +4,23 @@ import HeroSlideshow from "@/components/HeroSlideshow";
 import Reveal from "@/components/Reveal";
 import StatCounter from "@/components/StatCounter";
 import AlbumCard from "@/components/AlbumCard";
+import Tilt from "@/components/Tilt";
 import VideoShowcase from "@/components/VideoShowcase";
 import { albums } from "@/lib/albums";
 
 const heroSlides = [
-  { src: "/hero11.webp", alt: "Bengali wedding couple, candid portrait" },
-  { src: "/hero22.webp", alt: "Bride getting ready, golden light" },
-  { src: "/hero33.webp", alt: "Nikah ceremony moment" },
-  { src: "/hero44.webp", alt: "Reception stage, night lights" },
-  { src: "/hero55.webp", alt: "Couples posing, natural light" },
-  { src: "/hero66.webp", alt: "Bride portrait" },
-  
+  { src: "/hero1.jpg", alt: "Bengali wedding couple, candid portrait" },
+  { src: "/hero2.jpg", alt: "Bride getting ready, golden light" },
+  { src: "/hero3.jpg", alt: "Nikah ceremony moment" },
+  { src: "/hero4.jpg", alt: "Reception stage, night lights" },
+  { src: "/hero5.jpg", alt: "Couples posing, natural light" },
+  { src: "/rsfahim5.jpg", alt: "Couples posing, natural light" },
+  { src: "/rajan7.jpg", alt: "Couples posing, natural light" },
+  // Orientation (portrait/landscape) is now auto-detected from the actual
+  // image file at load time — no need to flag it here. Just list every
+  // hero photo's path below.
+  { src: "/hero33.jpg", alt: "Couple portrait, close up" },
+  { src: "/hero66.jpeg", alt: "Bride portrait" },
 ];
 
 const featured = albums.slice(0, 6);
@@ -27,7 +33,7 @@ export default function HomePage() {
           have their own sharp full-bleed photos layered on top of this. */}
       <div className="fixed inset-0">
         <Image
-          src="/rsfahim2.webp"
+          src="/rsfahim2.jpg"
           alt=""
           fill
           sizes="100vw"
@@ -119,18 +125,20 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-14 md:gap-10">
             <Reveal className="grid grid-cols-1 gap-6">
-              <div className="frame h-64 md:h-80 relative">
-                <Image
-                  src="/rsfahim2.webp"
-                  alt="Wedding photography sample"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-                <div className="caption">
-                  <span className="font-sans font-light text-xs text-caption">Photography</span>
+              <Tilt max={5}>
+                <div className="frame h-64 md:h-80 relative">
+                  <Image
+                    src="/rsfahim2.jpg"
+                    alt="Wedding photography sample"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  <div className="caption">
+                    <span className="font-sans font-light text-xs text-caption">Photography</span>
+                  </div>
                 </div>
-              </div>
+              </Tilt>
               <div>
                 <h3 className="font-serif text-2xl text-ivory mb-3">Photography</h3>
                 <p className="text-ivory-dim font-light leading-relaxed text-sm md:text-base">
@@ -141,18 +149,20 @@ export default function HomePage() {
             </Reveal>
 
             <Reveal className="grid grid-cols-1 gap-6" delay={0.15}>
-              <div className="frame h-64 md:h-80 relative">
-                <Image
-                  src="/nafisa1.webp"
-                  alt="Wedding cinematography sample"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-                <div className="caption">
-                  <span className="font-sans font-light text-xs text-caption">Cinematography</span>
+              <Tilt max={5}>
+                <div className="frame h-64 md:h-80 relative">
+                  <Image
+                    src="/nafisa1.jpg"
+                    alt="Wedding cinematography sample"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  <div className="caption">
+                    <span className="font-sans font-light text-xs text-caption">Cinematography</span>
+                  </div>
                 </div>
-              </div>
+              </Tilt>
               <div>
                 <h3 className="font-serif text-2xl text-ivory mb-3">Cinematography</h3>
                 <p className="text-ivory-dim font-light leading-relaxed text-sm md:text-base">
@@ -174,7 +184,7 @@ export default function HomePage() {
       {/* TRUST — cinematic quote break with a real photo behind it */}
       <section className="relative py-28 md:py-36 px-6 md:px-10 overflow-hidden border-t border-ivory/10">
         <Image
-          src="/rsfahim5.webp"
+          src="/rsfahim5.jpg"
           alt="Dream Images, wedding coverage"
           fill
           sizes="100vw"
@@ -185,7 +195,7 @@ export default function HomePage() {
 
         <Reveal className="relative z-10 max-w-3xl mx-auto text-center" as="div">
           <p className="font-serif text-2xl md:text-3xl text-ivory leading-snug">
-            Photographs our couples still open, years later that&rsquo;s the only metric we&rsquo;ve ever cared about.
+            Photographs our couples still open, years later — that&rsquo;s the only metric we&rsquo;ve ever cared about.
           </p>
           <p className="text-ivory-dim font-light text-sm mt-6">
             Followed by over 104,000 people across Bangladesh, trusted with some of the most closely
@@ -199,7 +209,7 @@ export default function HomePage() {
         <Reveal className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-ivory mb-6">Let&rsquo;s talk about your date</h2>
           <p className="text-ivory-dim font-light mb-8 max-w-md mx-auto">
-            Send us your wedding date and venue we reply personally, not through a bot.
+            Send us your wedding date and venue — we reply personally, not through a bot.
           </p>
           <Link href="/contact" className="bg-gold text-ink font-normal text-sm px-7 py-3.5 hover:bg-gold-bright btn-gold inline-block">
             Book a consultation

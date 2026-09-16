@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Tilt from "@/components/Tilt";
+import PageHero from "@/components/PageHero";
 import PackageCard, { type Package } from "@/components/PackageCard";
+import CustomQuoteBuilder from "@/components/CustomQuoteBuilder";
 import { siteConfig } from "@/lib/site-config";
 import { services, serviceHref } from "@/lib/services";
 
@@ -76,20 +79,16 @@ const packages: Package[] = [
 
 export default function PackagesPage() {
   return (
-    <div className="pt-32 md:pt-40 pb-20 md:pb-28 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto">
-        <Reveal className="max-w-2xl mb-16">
-          <p className="text-gold font-light text-sm mb-4 tracking-wide">Packages &amp; Services</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-ivory mb-5">
-            Coverage built around your ceremonies
-          </h1>
-          <p className="text-ivory-dim font-light leading-relaxed">
-            Every wedding is different, so every quote is put together around your dates, venues,
-            and the ceremonies you want covered. Pick a package below or get in touch and we&rsquo;ll
-            tailor one to your day.
-          </p>
-        </Reveal>
+    <div className="pb-20 md:pb-28">
+      <PageHero
+        image="/rsfahim.jpg"
+        alt="Dream Images, wedding coverage in progress"
+        eyebrow="Packages & Services"
+        title="Coverage built around your ceremonies"
+        subtitle="Every wedding is different, so every quote is put together around your dates, venues, and the ceremonies you want covered."
+      />
 
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 md:pt-20">
         {/* SERVICES */}
         <Reveal className="mb-10">
           <h2 className="font-serif text-2xl md:text-3xl text-ivory">What we cover</h2>
@@ -97,26 +96,28 @@ export default function PackagesPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {services.map((service, i) => (
             <Reveal key={service.name} delay={(i % 6) * 0.06}>
-              <Link
-                href={serviceHref(service)}
-                className="group block border border-ivory/10 bg-ink-2 hover:border-gold/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300"
-              >
-                <div className="frame h-48 relative">
-                  <Image
-                    src={service.image}
-                    alt={service.name}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-serif text-lg text-ivory mb-1.5 group-hover:text-gold transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="text-ivory-dim font-light text-xs leading-relaxed">{service.description}</p>
-                </div>
-              </Link>
+              <Tilt max={5}>
+                <Link
+                  href={serviceHref(service)}
+                  className="group block border border-ivory/10 bg-ink-2 hover:border-gold/50 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300"
+                >
+                  <div className="frame h-48 relative">
+                    <Image
+                      src={service.image}
+                      alt={service.name}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-serif text-lg text-ivory mb-1.5 group-hover:text-gold transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-ivory-dim font-light text-xs leading-relaxed">{service.description}</p>
+                  </div>
+                </Link>
+              </Tilt>
             </Reveal>
           ))}
         </div>
@@ -133,6 +134,19 @@ export default function PackagesPage() {
             </Reveal>
           ))}
         </div>
+
+        {/* CUSTOM QUOTE BUILDER — for couples who'd rather pick their own
+            mix than take a fixed tier. No live price shown; submitting
+            sends the selection through to request a real quote. */}
+        <Reveal className="mt-20 mb-10">
+          <h2 className="font-serif text-2xl md:text-3xl text-ivory mb-2">Or build your own</h2>
+          <p className="text-ivory-dim font-light text-sm max-w-xl">
+            Pick exactly what your day needs and request a custom quote no fixed package required.
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <CustomQuoteBuilder />
+        </Reveal>
 
         <Reveal className="mt-16 border-t border-ivory/10 pt-10 max-w-2xl">
           <h2 className="font-serif text-2xl text-ivory mb-4">Not sure what you need?</h2>

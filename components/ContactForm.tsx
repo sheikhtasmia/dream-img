@@ -9,15 +9,26 @@ const PACKAGE_OPTIONS = [
   "Standard Package",
   "Premium Combo 1",
   "Premium Combo 2",
+  "Custom Quote",
 ];
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-export default function ContactForm({ initialPackage }: { initialPackage?: string }) {
+export default function ContactForm({
+  initialPackage,
+  initialDetails,
+}: {
+  initialPackage?: string;
+  initialDetails?: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [name, setName] = useState("");
   const [selectedPackage, setSelectedPackage] = useState(
-    initialPackage && PACKAGE_OPTIONS.includes(initialPackage) ? initialPackage : "Not sure yet"
+    initialPackage && PACKAGE_OPTIONS.includes(initialPackage)
+      ? initialPackage
+      : initialDetails
+        ? "Custom Quote"
+        : "Not sure yet"
   );
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -51,7 +62,7 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
           <>
             <p className="font-serif text-xl text-ivory mb-2">Request sent</p>
             <p className="text-ivory-dim font-light text-sm mb-6">
-              We&rsquo;ll reply by email soon. If it&rsquo;s urgent, message us directly on WhatsApp
+              We&rsquo;ll reply by email soon. If it&rsquo;s urgent, message us directly on WhatsApp —
               we usually reply faster there.
             </p>
           </>
@@ -59,7 +70,7 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
           <>
             <p className="font-serif text-xl text-ivory mb-2">Couldn&rsquo;t send that</p>
             <p className="text-ivory-dim font-light text-sm mb-6">
-              Something went wrong on our end please message us directly on WhatsApp instead and
+              Something went wrong on our end — please message us directly on WhatsApp instead and
               we&rsquo;ll take it from there.
             </p>
           </>
@@ -123,7 +134,7 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
             name="phone"
             required
             className="w-full bg-transparent border-b border-ivory/10 focus:border-gold outline-none py-2 text-ivory placeholder:text-ivory-dim/40"
-            placeholder="+8801XXXXXXXXX"
+            placeholder="01XXXXXXXXX"
           />
         </div>
       </div>
@@ -143,7 +154,8 @@ export default function ContactForm({ initialPackage }: { initialPackage?: strin
         <label className="block text-xs font-light text-ivory-dim mb-2">Tell us about the wedding</label>
         <textarea
           name="message"
-          rows={3}
+          rows={initialDetails ? 5 : 3}
+          defaultValue={initialDetails}
           className="w-full bg-transparent border-b border-ivory/10 focus:border-gold outline-none py-2 text-ivory placeholder:text-ivory-dim/40"
           placeholder="Venue, ceremonies, anything we should know"
         />

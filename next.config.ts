@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         // photos can live off-repo instead of bloating the git history.
         hostname: "i.ibb.co",
       },
+      {
+        protocol: "https",
+        // imgbb also serves direct links from this variant domain.
+        hostname: "i.ibb.co.com",
+      },
     ],
   },
 };
