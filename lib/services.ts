@@ -19,7 +19,7 @@ export const services: Service[] = [
   {
     name: "Wedding",
     description: "Full-day coverage across every ceremony, from arrival to the final dance.",
-    image: "/rsfahim.jpg",
+    image: "/rsfahim.webp",
     albumSlug: "rs-fahim-manjia",
   },
   {
@@ -37,7 +37,7 @@ export const services: Service[] = [
   {
     name: "Pre-Wedding",
     description: "A relaxed shoot before the big day, at a location that means something to you.",
-    image: "/rajan.jpg",
+    image: "/rajan.webp",
     albumSlug: "rajan-mourita",
   },
   {
@@ -49,7 +49,7 @@ export const services: Service[] = [
   {
     name: "Birthday",
     description: "Milestone birthdays and family celebrations, shot with the same care as a wedding.",
-    image: "/fazrin.jpg",
+    image: "/fazrin.webp",
     albumSlug: "fazrin",
   },
 //   {

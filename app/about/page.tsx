@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const founder = {
   name: "Kayem Islam",
   role: "CEO & Chief photographer",
-  photo: "/founder.jpg",
+  photo: "/founder.jpeg",
   bio: "Started Dream Images over a decade ago shooting a friend's wedding on borrowed equipment. Still personally shoots most weddings the studio takes on.",
 };
 
