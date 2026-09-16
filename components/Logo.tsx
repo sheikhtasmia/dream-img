@@ -34,4 +34,8 @@ export default function Logo({
       )}
     </Link>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f4d8eab25006e4e2b248506d546d84685c571b7b

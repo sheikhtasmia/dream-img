@@ -314,20 +314,6 @@ body.loaded .hero-reveal {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- marquee ---------- */
-.marquee-track {
-  width: max-content;
-  animation: marqueeScroll 32s linear infinite;
-}
-@keyframes marqueeScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-33.333%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -350,9 +336,6 @@ body.loaded .hero-reveal {
     display: none;
   }
   .slide img {
-    animation: none;
-  }
-  .marquee-track {
     animation: none;
   }
 }

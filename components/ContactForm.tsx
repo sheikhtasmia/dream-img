@@ -52,7 +52,7 @@ export default function ContactForm({
     }
   }
 
-  const whatsappMessage = `Hi Dream Images, I'm ${name || "[your name]"} — I'd like to book the ${selectedPackage}.`;
+  const whatsappMessage = `Hi Dream Images, I'm ${name || "[your name]"}  I'd like to book the ${selectedPackage}.`;
   const whatsappHref = `${siteConfig.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 
   if (status === "sent" || status === "error") {
@@ -62,7 +62,7 @@ export default function ContactForm({
           <>
             <p className="font-serif text-xl text-ivory mb-2">Request sent</p>
             <p className="text-ivory-dim font-light text-sm mb-6">
-              We&rsquo;ll reply by email soon. If it&rsquo;s urgent, message us directly on WhatsApp —
+              We&rsquo;ll reply by email soon. If it&rsquo;s urgent, message us directly on WhatsApp
               we usually reply faster there.
             </p>
           </>
@@ -70,7 +70,7 @@ export default function ContactForm({
           <>
             <p className="font-serif text-xl text-ivory mb-2">Couldn&rsquo;t send that</p>
             <p className="text-ivory-dim font-light text-sm mb-6">
-              Something went wrong on our end — please message us directly on WhatsApp instead and
+              Something went wrong on our end please message us directly on WhatsApp instead and
               we&rsquo;ll take it from there.
             </p>
           </>

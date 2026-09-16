@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet the founder of Dream Images a wedding photography and cinematography studio based in Savar, Dhaka.",
+    "Meet the founder of Dream Images — a wedding photography and cinematography studio based in Savar, Dhaka.",
   alternates: { canonical: "/about" },
 };
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 md:pb-28">
       <PageHero
-        image="/cover1.png"
+        image="/cover2.jpg"
         alt="Dream Images at work on a wedding day"
         eyebrow="About Us"
         title="The person behind every frame"

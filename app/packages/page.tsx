@@ -12,7 +12,7 @@ import { services, serviceHref } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Packages & Services",
   description:
-    "Wedding photography and cinematography packages from Dream Images Basic, Standard, and Premium Combo coverage for every ceremony.",
+    "Wedding photography and cinematography packages from Dream Images — Basic, Standard, and Premium Combo coverage for every ceremony.",
   alternates: { canonical: "/packages" },
 };
 
