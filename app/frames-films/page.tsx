@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Frames & Films Real Bengali Weddings",
   description:
-    "Browse full wedding albums shot by Dream Images across Dhaka and Bangladesh — holud, mehndi, nikah, and reception galleries from real couples.",
+    "Browse full wedding albums shot by Dream Images across Dhaka and Bangladesh holud, mehndi, nikah, and reception galleries from real couples.",
   alternates: { canonical: "/frames-films" },
 };
 
@@ -15,7 +15,7 @@ export default function FramesFilmsPage() {
   return (
     <div className="pb-20 md:pb-28">
       <PageHero
-        image="/rsfahim.jpg"
+        image="/cover2.jpg"
         alt="Dream Images, a recent wedding"
         eyebrow="Frames & Films"
         title="Every album, one real wedding at a time"
