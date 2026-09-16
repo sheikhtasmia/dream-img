@@ -81,7 +81,7 @@ export default function PackagesPage() {
   return (
     <div className="pb-20 md:pb-28">
       <PageHero
-        image="/rsfahim.jpg"
+        image="/rsfahim.webp"
         alt="Dream Images, wedding coverage in progress"
         eyebrow="Packages & Services"
         title="Coverage built around your ceremonies"

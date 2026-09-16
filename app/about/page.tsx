@@ -59,17 +59,18 @@ export default function AboutPage() {
           </Reveal>
         </div>
 
-        {/* Founder spotlight */}
+ {/* Founder spotlight */}
         <Reveal className="mt-14 md:mt-20 mb-10">
           <Tilt max={4} scale={1.01}>
             <div className="group grid md:grid-cols-2 gap-10 md:gap-14 border border-ivory/10 p-6 md:p-10 bg-ink-2">
-              <div className="frame h-72 md:h-full min-h-[320px] relative overflow-hidden">
+              <div className="frame h-auto md:h-full min-h-[320px] relative overflow-hidden aspect-[3/4]">
                 <Image
                   src={founder.photo}
                   alt={founder.name}
                   fill
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  quality={90}
                 />
               </div>
               <div className="flex flex-col justify-center">
@@ -81,7 +82,7 @@ export default function AboutPage() {
             </div>
           </Tilt>
         </Reveal>
-
+        
         {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-6 mb-20">
           <Reveal delay={0.05}>
