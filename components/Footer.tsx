@@ -31,6 +31,14 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-ivory/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-light text-ivory-dim/60">
         <p>{siteConfig.address.full}</p>
+        <div className="flex items-center gap-4">
+          <Link href="/terms" className="hover:text-gold transition-colors">
+            Terms &amp; Conditions
+          </Link>
+          <Link href="/privacy" className="hover:text-gold transition-colors">
+            Privacy Policy
+          </Link>
+        </div>
         <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
       </div>
     </footer>

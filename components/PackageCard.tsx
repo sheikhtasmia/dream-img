@@ -10,10 +10,14 @@ export type Package = {
   tagline: string;
   featured?: boolean;
   inclusions: string[];
+  /** Optional closing note shown under the inclusions list (no bullet). */
+  note?: string;
 };
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
-  const [open, setOpen] = useState(true);
+  // Collapsed by default — with this many packages now listed, showing
+  // every detail expanded at once made the page unmanageably long.
+  const [open, setOpen] = useState(false);
 
   return (
     <Tilt max={5} scale={1.015}>
@@ -22,18 +26,15 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           pkg.featured ? "border-gold bg-ink-2" : "border-ivory/10 hover:border-gold/50"
         }`}
       >
-        {/* Animated gold accent bar */}
+        {/* Animated gold accent bar — grows in on hover for a bit of "card
+            vibe" instead of just a flat border. */}
         <span
           aria-hidden="true"
           className="absolute left-0 top-0 bottom-0 w-1 bg-gold origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
         />
 
         <div className="p-6 md:p-8">
-          {pkg.featured && (
-            <span className="text-gold text-xs font-light tracking-wide mb-3 block">
-              Most booked
-            </span>
-          )}
+          {pkg.featured && <span className="text-gold text-xs font-light tracking-wide mb-3 block">Most popular</span>}
           <h2 className="font-serif text-2xl text-ivory mb-1">{pkg.name}</h2>
           <p className="font-serif text-2xl text-gold mb-4">{pkg.price}</p>
           <p className="text-ivory-dim font-light text-sm mb-6">{pkg.tagline}</p>
@@ -41,9 +42,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           <Link
             href={`/contact?package=${encodeURIComponent(pkg.name)}`}
             className={`block text-center text-sm font-normal px-6 py-3 btn-gold ${
-              pkg.featured
-                ? "bg-gold text-ink hover:bg-gold-bright"
-                : "border border-gold text-gold hover:bg-gold hover:text-ink"
+              pkg.featured ? "bg-gold text-ink hover:bg-gold-bright" : "border border-gold text-gold hover:bg-gold hover:text-ink"
             }`}
           >
             Book this package
@@ -74,7 +73,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
         >
           <div className="overflow-hidden">
-            <ul className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
+            <ul className="px-6 md:px-8 pb-4 space-y-2">
               {pkg.inclusions.map((item) => (
                 <li key={item} className="text-ivory-dim font-light text-xs flex gap-2">
                   <span className="text-gold">—</span>
@@ -82,6 +81,9 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
                 </li>
               ))}
             </ul>
+            {pkg.note && (
+              <p className="px-6 md:px-8 pb-6 md:pb-8 text-ivory-dim font-light text-xs italic">{pkg.note}</p>
+            )}
           </div>
         </div>
       </div>

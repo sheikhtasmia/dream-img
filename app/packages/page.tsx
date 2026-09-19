@@ -12,7 +12,7 @@ import { services, serviceHref } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Packages & Services",
   description:
-    "Wedding photography and cinematography packages from Dream Images — Basic, Standard, and Premium Combo coverage for every ceremony.",
+    "Wedding photography and cinematography packages from Dream Images Basic, Standard, and Premium Combo coverage for every ceremony.",
   alternates: { canonical: "/packages" },
 };
 
@@ -48,8 +48,7 @@ const packages: Package[] = [
   {
     name: "Premium Combo 1",
     price: "৳34,999",
-    featured: true,
-    tagline: "Our most-booked package two photographers, two cinematographers.",
+    tagline: "Two photographers, two cinematographers, one full day.",
     inclusions: [
       "2 top photographers",
       "2 top cinematographers",
@@ -75,13 +74,87 @@ const packages: Package[] = [
       "Google Drive / pendrive delivery",
     ],
   },
+  {
+    name: "Platinum",
+    price: "৳50,000",
+    tagline: "3 photographers + 2 cinematographers, with an expanded team.",
+    inclusions: [
+      "3 photographers",
+      "2 cinematographers",
+      "Expanded photography team",
+      "5 hours",
+      "Cinematic trailer",
+      "Full movie",
+      "Unlimited clicks",
+      "All photos edited",
+      "150 × 4R prints",
+    ],
+  },
+  {
+    name: "Platinum Plus",
+    price: "৳65,000",
+    tagline: "2 core photographers + 2 cinematographers, for a longer day.",
+    inclusions: [
+      "Lead: Kayem Islam",
+      "2 core photographers",
+      "2 cinematographers",
+      "7 hours coverage",
+      "Cinematic trailer",
+      "Full movie",
+      "All photos edited",
+      "150 × 4R prints",
+      "Outdoor shoot",
+      "Drone coverage",
+    ],
+    
+  },
+  {
+    name: "Sapphire",
+    price: "৳80,000",
+    tagline: "4 photographers + 3 cinematographers, full-day coverage.",
+    inclusions: [
+      "Lead: Kayem Islam",
+      "4 photographers",
+      "3 cinematographers",
+      "7–8 hours coverage",
+      "Cinematic trailer",
+      "Full movie",
+      "All photos edited",
+      "200 × 4R prints",
+      "Outdoor shoot",
+      "Drone coverage",
+      "1 social media reel",
+    ],
+  },
+  {
+    name: "Infinite",
+    price: "৳130,000",
+    featured: true,
+    tagline: "5–6 photographers + 3 cinematographers every moment, before and after.",
+    inclusions: [
+      "Lead: Kayem Islam",
+      "5–6 photographers",
+      "2 core + 2 senior photographers",
+      "3 cinematographers",
+      "7–8 hours coverage",
+      "Cinematic trailer",
+      "Full movie",
+      "All photos edited",
+      "200 × 4R prints",
+      "Social media reel",
+      "Outdoor shoot",
+      "Drone coverage",
+      "Pre-wedding shoot",
+      "Post-wedding shoot",
+    ],
+  },
 ];
 
 export default function PackagesPage() {
   return (
     <div className="pb-20 md:pb-28">
       <PageHero
-        image="/rsfahim.webp"
+        image="/rsfahim.jpg"
         alt="Dream Images, wedding coverage in progress"
         eyebrow="Packages & Services"
         title="Coverage built around your ceremonies"

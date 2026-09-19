@@ -57,8 +57,7 @@ export default async function AlbumPage({ params }: { params: Promise<{ slug: st
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/35 via-transparent to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-10 md:pb-14">
           <Reveal className="mb-6">
