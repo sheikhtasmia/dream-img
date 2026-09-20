@@ -39,7 +39,7 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </div>
-        <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.| Website crafted by STechNest</p>
       </div>
     </footer>
   );
