@@ -12,14 +12,14 @@ import { services, serviceHref } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Packages & Services",
   description:
-    "Wedding photography and cinematography packages from Dream Images Basic, Standard, and Premium Combo coverage for every ceremony.",
+    "Wedding photography and cinematography packages from Dream Images Basic, Standard, Premium, and traditional Hindu Wedding coverage.",
   alternates: { canonical: "/packages" },
 };
 
 const packages: Package[] = [
   {
     name: "Basic Package",
-    price: "৳14,999",
+    price: "৳17,999",
     tagline: "For a single ceremony, done properly.",
     inclusions: [
       "1 photographer",
@@ -33,7 +33,7 @@ const packages: Package[] = [
   },
   {
     name: "Standard Package",
-    price: "৳24,999",
+    price: "৳27,999",
     tagline: "A step up in coverage for your full wedding day.",
     inclusions: [
       "2 photographers",
@@ -47,7 +47,7 @@ const packages: Package[] = [
   },
   {
     name: "Premium Combo 1",
-    price: "৳34,999",
+    price: "৳39,999",
     tagline: "Two photographers, two cinematographers, one full day.",
     inclusions: [
       "2 top photographers",
@@ -60,25 +60,11 @@ const packages: Package[] = [
     ],
   },
   {
-    name: "Premium Combo 2",
-    price: "৳49,999",
-    tagline: "Every ceremony, fully documented with a drone shoot included.",
-    inclusions: [
-      "3 top photographers",
-      "2 top cinematographers",
-      "Drone shoot",
-      "Single day package · 5 hours",
-      "All pictures colour corrected",
-      "2–3 min trailer",
-      "30–40 min full video",
-      "Google Drive / pendrive delivery",
-    ],
-  },
-  {
     name: "Platinum",
-    price: "৳50,000",
+    price: "৳59,999",
     tagline: "3 photographers + 2 cinematographers, with an expanded team.",
     inclusions: [
+      "Lead: Kayem Islam",
       "3 photographers",
       "2 cinematographers",
       "Expanded photography team",
@@ -87,56 +73,41 @@ const packages: Package[] = [
       "Full movie",
       "Unlimited clicks",
       "All photos edited",
-      "150 × 4R prints",
+      "100 × 4R prints",
+      "Drone coverage",
     ],
   },
   {
-    name: "Platinum Plus",
-    price: "৳65,000",
-    tagline: "2 core photographers + 2 cinematographers, for a longer day.",
-    inclusions: [
-      "Lead: Kayem Islam",
-      "2 core photographers",
-      "2 cinematographers",
-      "7 hours coverage",
-      "Cinematic trailer",
-      "Full movie",
-      "All photos edited",
-      "150 × 4R prints",
-      "Outdoor shoot",
-      "Drone coverage",
-    ],
-    
-  },
-  {
-    name: "Sapphire",
-    price: "৳80,000",
-    tagline: "4 photographers + 3 cinematographers, full-day coverage.",
-    inclusions: [
-      "Lead: Kayem Islam",
-      "4 photographers",
-      "3 cinematographers",
-      "7–8 hours coverage",
-      "Cinematic trailer",
-      "Full movie",
-      "All photos edited",
-      "200 × 4R prints",
-      "Outdoor shoot",
-      "Drone coverage",
-      "1 social media reel",
-    ],
-  },
+  name: "Platinum Plus",
+  price: "৳89,999",
+  tagline: "1 chief, 1 core, 1 senior photographer + 2 cinematographers, for a longer day.",
+  inclusions: [
+    "1 Chief Photographer (Kayem Islam)",
+    "1 Core Photographer",
+    "1 Senior Photographer",
+    "2 Cinematographers",
+    "7 hours coverage",
+    "Cinematic trailer",
+    "Full movie",
+    "All photos edited",
+    "150 × 4R prints",
+    "Outdoor shoot",
+    "Drone coverage",
+  ],
+  note: "Best for couples who want coverage beyond the main event.",
+},
+  
   {
     name: "Infinite",
     price: "৳130,000",
     featured: true,
-    tagline: "5–6 photographers + 3 cinematographers every moment, before and after.",
+    tagline: "5–6 photographers + 4 cinematographers every moment, before and after.",
     inclusions: [
       "Lead: Kayem Islam",
       "5–6 photographers",
       "2 core + 2 senior photographers",
-      "3 cinematographers",
-      "7–8 hours coverage",
+      "4 cinematographers",
+      "7 hours coverage",
       "Cinematic trailer",
       "Full movie",
       "All photos edited",
@@ -146,6 +117,52 @@ const packages: Package[] = [
       "Drone coverage",
       "Pre-wedding shoot",
       "Post-wedding shoot",
+    ],
+  },
+
+  /* ---------------- HINDU WEDDING SPECIAL PACKAGES ---------------- */
+  {
+    name: "Saat Pheras (Hindu Wedding Basic)",
+    price: "৳59,999",
+    tagline: "Complete coverage for all rituals: Adhibash, HoludSnan, Biye, Bashibiye & Biday.",
+    inclusions: [
+      "1 Top Photographer",
+      "1 Top Cinematographer",
+      "Coverage for: Adhibash, HoludSnan, Biye, Bashibiye & Biday",
+      "Short Trailer & Full Video (entire event)",
+      "1 Social Media Reel",
+      "50 × 4R Prints",
+      "Google Drive / Pendrive Delivery",
+    ],
+  },
+  {
+    name: "Subho Dristi (Hindu Wedding Standard)",
+    price: "৳79,999",
+    tagline: "Enhanced dual-photographer coverage for every ritual.",
+    inclusions: [
+      "2 Top Photographers",
+      "1 Top Cinematographer",
+      "Coverage for: Adhibash, HoludSnan, Biye, Bashibiye & Biday",
+      "Short Trailer & Full Video",
+      "1 Social Media Reel",
+      "100 × 4R Prints",
+      "Google Drive / Pendrive Delivery",
+    ],
+  },
+  {
+    name: "Eternal Lagna (Hindu Wedding Premium)",
+    price: "৳1,30,000",
+    tagline: "Full-scale cinematic coverage with drone and outdoor shoot included.",
+    inclusions: [
+      "2 Top Photographers",
+      "2 Top Cinematographers",
+      "Coverage for: Adhibash, HoludSnan, Biye, Bashibiye & Biday",
+      "Cinematic Trailer & Extended Full Movie",
+      "2 Social Media Reels",
+      "150 × 4R Prints",
+      "Drone Shoot included",
+      "Outdoor Shoot included",
+      "Google Drive / Pendrive Delivery",
     ],
   },
 ];
@@ -195,8 +212,7 @@ export default function PackagesPage() {
           ))}
         </div>
 
-        {/* PACKAGES — no images here on purpose: title, price, one-line
-            tagline, and an expandable "View details" for the full list. */}
+        {/* PACKAGES */}
         <Reveal className="mb-10">
           <h2 className="font-serif text-2xl md:text-3xl text-ivory">Packages</h2>
         </Reveal>
@@ -208,9 +224,7 @@ export default function PackagesPage() {
           ))}
         </div>
 
-        {/* CUSTOM QUOTE BUILDER — for couples who'd rather pick their own
-            mix than take a fixed tier. No live price shown; submitting
-            sends the selection through to request a real quote. */}
+        {/* CUSTOM QUOTE BUILDER */}
         <Reveal className="mt-20 mb-10">
           <h2 className="font-serif text-2xl md:text-3xl text-ivory mb-2">Or build your own</h2>
           <p className="text-ivory-dim font-light text-sm max-w-xl">

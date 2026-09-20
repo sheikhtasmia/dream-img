@@ -31,8 +31,8 @@ export const services: Service[] = [
   {
     name: "Akd & Nikah",
     description: "Intimate documentation of the signing and blessing, with close family.",
-    image: "/sama.jpg",
-    albumSlug: "sama-tonmoy",
+    image: "/raisa.webp",
+    albumSlug: "raisa-minhaj",
   },
   {
     name: "Pre-Wedding",

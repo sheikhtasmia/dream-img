@@ -11,7 +11,7 @@ export const siteConfig = {
   email: "dreamimages47@gmail.com",
   // Create a form at https://formspree.io (free tier works), then replace
   // this with your real endpoint, e.g. "https://formspree.io/f/abcdwxyz".
-  formspreeEndpoint: "https://formspree.io/f/REPLACE_ME",
+  formspreeEndpoint: "https://formspree.io/f/mjykgglp",
   address: {
     locality: "Savar",
     region: "Dhaka Division",

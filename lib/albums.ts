@@ -14,17 +14,12 @@ export type Album = {
   images: AlbumImage[];
 };
 
-// Placeholder gallery data. Replace `cover.src` and each `images[].src`
-// with real photos once the client provides them — the seed values below
-// only exist so every card/album shows a distinct placeholder photo.
 function ph(seed: string, w: number, h: number) {
   return `https://picsum.photos/seed/${seed}/${w}/${h}`;
 }
 
 export const albums: Album[] = [
   {
-    // Real photos: swap the placeholder question marks below for this couple's
-    // actual ceremony/location once you have them — everything else is real.
     slug: "rs-fahim-manjia",
     title: "RS Fahim & Manjia",
     event: "Wedding",
@@ -49,7 +44,6 @@ export const albums: Album[] = [
       { src: "https://i.ibb.co.com/6cHwnpQT/rsfahim14.webp", alt: "RS Fahim and Manjia, closing moment" },
       { src: "https://i.ibb.co.com/8gJmdzXv/rsfahim15.webp", alt: "RS Fahim and Manjia, final portrait" },
       { src: "https://i.ibb.co.com/Y7QRnqpd/rsfahim16.webp", alt: "RS Fahim and Manjia, wedding portrait" },
-
     ],
   },
   {
@@ -72,14 +66,37 @@ export const albums: Album[] = [
       { src: "/jebin8.webp", alt: "Jabin and Emran, closing moment" },
       { src: "/jebin9.webp", alt: "Jabin and Emran, final portrait" },
       { src: "/jebin10.webp", alt: "Jabin and Emran, detail shot" },
-      { src: "/jebin11.webp", alt: "Jabin and Emran, family moment" },    
+      { src: "/jebin11.webp", alt: "Jabin and Emran, family moment" },
+    ],
+  },
+  {
+    slug: "raisa-minhaj",
+    title: "Raisa & Minhaj",
+    event: "Akhd",
+    date: "2025-11-08",
+    location: "Dhaka",
+    excerpt: "An intimate akhd ceremony, captured in timeless frames.",
+    cover: { src: "/raisa.webp", alt: "Raisa and Minhaj, akhd cover photo" },
+    images: [
+      { src: "/raisa.webp", alt: "Raisa and Minhaj, portrait" },
+      { src: "https://i.ibb.co.com/zdNZVqX/raisa1.jpg", alt: "Raisa and Minhaj, ceremony moment" },
+      { src: "https://i.ibb.co.com/NnKKnQtM/raisa2.jpg", alt: "Raisa and Minhaj, candid portrait" },
+      { src: "https://i.ibb.co.com/k2Fp8Qkt/raisa3.jpg", alt: "Raisa and Minhaj, detail shot" },
+      { src: "https://i.ibb.co.com/h19VqT7G/raisa5.jpg", alt: "Raisa and Minhaj, family moment" },
+      { src: "https://i.ibb.co.com/nqwVtFY6/raisa11.jpg", alt: "Raisa and Minhaj, reception" },
+      { src: "https://i.ibb.co.com/N2WBT44y/raisa10.jpg", alt: "Raisa and Minhaj, portrait" },
+      { src: "https://i.ibb.co.com/vCj3rnsk/raisa9.jpg", alt: "Raisa and Minhaj, ceremony moment" },
+      { src: "https://i.ibb.co.com/0zBhRst/raisa8.jpg", alt: "Raisa and Minhaj, candid portrait" },
+      { src: "https://i.ibb.co.com/5WmCn9b4/raisa7.jpg", alt: "Raisa and Minhaj, detail shot" },
+      { src: "https://i.ibb.co.com/5W17BzN0/raisa6.jpg", alt: "Raisa and Minhaj, family moment" },
+      { src: "https://i.ibb.co.com/wr7BY2TW/raisa4.jpg", alt: "Raisa and Minhaj, reception" },
     ],
   },
   {
     slug: "50th",
     title: "50th anniversary",
     event: "Anniversary",
-    date: "2026-2-21",
+    date: "2026-02-21",
     location: "Dhaka",
     excerpt: "A golden anniversary celebration, with a family portrait session.",
     cover: { src: "/50th.webp", alt: "Sayma, holud cover photo" },
@@ -100,14 +117,12 @@ export const albums: Album[] = [
       { src: "/50th12.webp", alt: "Sayma, reception" },
       { src: "/50th16.webp", alt: "Sayma, candid moment" },
       { src: "/50th13.webp", alt: "Sayma, portrait" },
-
-
     ],
   },
   {
     slug: "juthy-sharan",
     title: "Juthy & Sharan",
-    event: "",
+    event: "Nikah",
     date: "2024-08-09",
     location: "Dhaka",
     excerpt: "An intimate nikah ceremony, shot in soft light.",
@@ -124,8 +139,8 @@ export const albums: Album[] = [
       { src: "/juthy8.webp", alt: "Juthy and Sharan, guests" },
       { src: "/juthy9.webp", alt: "Juthy and Sharan, closing moment" },
       { src: "/juthy10.webp", alt: "Juthy and Sharan, final portrait" },
-      {src: "/juthy11.webp", alt: "Juthy and Sharan, wedding portrait" },
-      {src: "/juthy12.webp", alt: "Juthy and Sharan, wedding portrait" },
+      { src: "/juthy11.webp", alt: "Juthy and Sharan, wedding portrait" },
+      { src: "/juthy12.webp", alt: "Juthy and Sharan, wedding portrait" },
     ],
   },
   {
@@ -187,31 +202,29 @@ export const albums: Album[] = [
       { src: "https://i.ibb.co.com/pvZsgy4N/sabbir9.webp", alt: "Oishi and Sabbir, detail shot" },
       { src: "https://i.ibb.co.com/M5k3tBQD/sabbir10.webp", alt: "Oishi and Sabbir, family moment" },
       { src: "https://i.ibb.co.com/9HMHDr1v/sabbir16.webp", alt: "Oishi and Sabbir, reception" },
-
     ],
   },
-    {
+  {
     slug: "lamha-fuad",
     title: "Lamha & Fuad",
     event: "",
     date: "2025-11-08",
     location: "Dhaka",
     excerpt: "",
-    cover: { src: "/fuad.webp", alt: "Fazrin, birthday cover photo" },
+    cover: { src: "/fuad.webp", alt: "Lamha and Fuad cover photo" },
     images: [
-      { src: "/fuad.webp", alt: "Fazrin, birthday portrait" },
-      { src: "/fuad1.webp", alt: "Fazrin, ceremony moment" },
-      { src: "/fuad2.webp", alt: "Fazrin, candid portrait" },
-      { src: "/fuad3.webp", alt: "Fazrin, detail shot" },
-      { src: "/fuad4.webp", alt: "Fazrin, family moment" },
-      { src: "/fuad5.webp", alt: "Fazrin, reception" },
-      { src: "/fuad6.webp", alt: "Fazrin, birthday portrait" },
-      { src: "/fuad7.webp", alt: "Fazrin, ceremony moment" },
-      { src: "/fuad8.webp", alt: "Fazrin, candid portrait" },
+      { src: "/fuad.webp", alt: "Lamha and Fuad portrait" },
+      { src: "/fuad1.webp", alt: "Lamha and Fuad, ceremony moment" },
+      { src: "/fuad2.webp", alt: "Lamha and Fuad, candid portrait" },
+      { src: "/fuad3.webp", alt: "Lamha and Fuad, detail shot" },
+      { src: "/fuad4.webp", alt: "Lamha and Fuad, family moment" },
+      { src: "/fuad5.webp", alt: "Lamha and Fuad, reception" },
+      { src: "/fuad6.webp", alt: "Lamha and Fuad portrait" },
+      { src: "/fuad7.webp", alt: "Lamha and Fuad, ceremony moment" },
+      { src: "/fuad8.webp", alt: "Lamha and Fuad, candid portrait" },
     ],
   },
-
-   {
+  {
     slug: "fazrin",
     title: "Fazrin",
     event: "Birthday",
@@ -235,9 +248,7 @@ export const albums: Album[] = [
       { src: "/fazrin12.webp", alt: "Fazrin, birthday moment" },
     ],
   },
-
 ];
-
 
 export function getAlbumBySlug(slug: string) {
   return albums.find((a) => a.slug === slug);
