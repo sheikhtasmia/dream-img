@@ -122,10 +122,10 @@ export const albums: Album[] = [
   {
     slug: "juthy-sharan",
     title: "Juthy & Sharan",
-    event: "Nikah",
+    event: "Holud",
     date: "2024-08-09",
     location: "Dhaka",
-    excerpt: "An intimate nikah ceremony, shot in soft light.",
+    excerpt: "An intimate holud ceremony, shot in soft light.",
     cover: { src: "/juthy.webp", alt: "Juthy and Sharan, wedding cover photo" },
     images: [
       { src: "/juthy.webp", alt: "Juthy and Sharan, wedding portrait" },
